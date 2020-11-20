@@ -43,6 +43,8 @@ public class LoginActivity extends AppCompatActivity {
     private Button mLoginView;
     private TextView mForgetPsdView;
     private TextView mRegisterView;
+    private TextView mRegisterCompanyView;
+    private TextView mRegisterDoctorView;
     private LinearLayout mTermsLayout;
     private TextView mTermsView;
     private RelativeLayout mPasswordLayout;
@@ -180,6 +182,9 @@ public class LoginActivity extends AppCompatActivity {
         mLoginView = findViewById(R.id.btn_login);
         mForgetPsdView = findViewById(R.id.tv_forget_password);
         mRegisterView = findViewById(R.id.tv_register_account);
+        //公司与医生在这儿，Onclick()点击事件没有写
+        mRegisterCompanyView = findViewById(R.id.tv_registercompany_account);
+        mRegisterDoctorView = findViewById(R.id.tv_registerdoctor_account);
         mTermsLayout = findViewById(R.id.ll_terms_of_service_layout);
         mTermsView = findViewById(R.id.tv_terms_of_service);
         mPasswordLayout = findViewById(R.id.rl_password_layout);
@@ -190,6 +195,8 @@ public class LoginActivity extends AppCompatActivity {
         mDropDownInvisibleViews.add(mPasswordView);
         mDropDownInvisibleViews.add(mForgetPsdView);
         mDropDownInvisibleViews.add(mRegisterView);
+        mDropDownInvisibleViews.add(mRegisterCompanyView);
+        mDropDownInvisibleViews.add(mRegisterDoctorView);
         mDropDownInvisibleViews.add(mPasswordLayout);
         mDropDownInvisibleViews.add(mLoginView);
         mDropDownInvisibleViews.add(mTermsLayout);
