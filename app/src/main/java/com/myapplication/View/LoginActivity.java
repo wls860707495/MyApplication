@@ -168,6 +168,13 @@ public class LoginActivity extends AppCompatActivity {
                 //进入服务条款界面
             }
         });
+        mRegisterCompanyView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RegisterClinicActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
