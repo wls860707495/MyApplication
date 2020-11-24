@@ -1,6 +1,8 @@
 package com.myapplication.View;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
@@ -22,9 +24,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.myapplication.Model.Usermessage;
+import com.myapplication.UtilsHelper.SharePreferenceUtil;
 import com.myapplication.View.adapter.UserBeanAdapter;
 import com.myapplication.View.bean.UserBean;
 import com.myapplication.R;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +53,6 @@ public class LoginActivity extends AppCompatActivity {
     private LinearLayout mTermsLayout;
     private TextView mTermsView;
     private RelativeLayout mPasswordLayout;
-
     private List<View> mDropDownInvisibleViews;
 
     @Override
@@ -74,12 +78,25 @@ public class LoginActivity extends AppCompatActivity {
                     FutureTask<String> ft = new FutureTask<>(mc);
                     Thread thread = new Thread(ft);
                     thread.start();
-                    String bool = ft.get();
-                    if (bool.equals("correct")){
+                    String json = ft.get();
+                    Log.i("wangls", json);
+
+                    //接收String并解析为json
+                    JSONObject Jobject = new JSONObject(json);
+                    String username = Jobject.getString("name");
+                    String userps = Jobject.getString("password");
+                    String token = Jobject.getString("token");
+                    SharePreferenceUtil.setuserParam(LoginActivity.this,username,userps,token);
+
+                    //token获取代码
+//                    SharedPreferences sp = LoginActivity.this.getSharedPreferences("Login", Context.MODE_PRIVATE);
+//                    String to = sp.getString("token",null);
+//                    Log.i("wangls", to);
+                    if (json == null){
+                        Toast.makeText(LoginActivity.this,"账号或密码错误",Toast.LENGTH_LONG).show();
+                    }else{
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
-                    }else{
-                        Toast.makeText(LoginActivity.this,"账号或密码错误",Toast.LENGTH_LONG).show();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -280,13 +297,13 @@ public class LoginActivity extends AppCompatActivity {
        }
        @Override
         public String call() {
-           String bool = null;
+           String json = null;
            try {
-               bool = user.verify(name,password);
+               json = user.verify(name,password);
            } catch (Exception e) {
                e.printStackTrace();
            }
-           return bool;
+           return json;
         }
     }
     @Override

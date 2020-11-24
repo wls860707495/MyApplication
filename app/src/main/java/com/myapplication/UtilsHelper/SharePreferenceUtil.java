@@ -41,7 +41,10 @@ public class SharePreferenceUtil {
         SharedPreferences sp = getSharePreference(context);
         return sp.getInt(key,0);
     }
-
+    public static String Getcontent(String key,Context context){
+        SharedPreferences sp = getSharePreference(context);
+        return sp.getString("token",null);
+    }
     /**
      * 保存数据的方法，我们需要拿到保存数据的具体类型，然后根据类型调用不同的保存方法
      * @param context 上下文对象
@@ -70,6 +73,15 @@ public class SharePreferenceUtil {
             editor.putLong(key, (Long)object);
         }
 
+        editor.apply();
+    }
+    public static void setuserParam(Context context , String username, String userps,String token){
+
+        SharedPreferences sp = context.getSharedPreferences("Login", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString("username", username);
+        editor.putString("userps", userps);
+        editor.putString("token", token);
         editor.apply();
     }
 
