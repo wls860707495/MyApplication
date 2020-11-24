@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+<LinearLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center_vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="注册"
+            android:textSize="30sp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/shap"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+            <EditText
+                android:id="@+id/et_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingLeft="6dp"
+                android:hint="账号"
+                android:singleLine="true"
+                android:maxLength="15"
+                android:background="#ffffff"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:background="@drawable/shap"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingLeft="6dp"
+                android:singleLine="true"
+                android:hint="请输入密码"
+                android:inputType="textPassword"
+                android:maxLength="15"
+                android:background="#ffffff"
+                android:id="@+id/et_psw"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@drawable/shap"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingLeft="6dp"
+                android:singleLine="true"
+                android:hint="请再次输入密码"
+                android:inputType="textPassword"
+                android:maxLength="15"
+                android:background="#ffffff"
+                android:id="@+id/et_psw_again"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@drawable/shap"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+            <EditText
+                android:id="@+id/user_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingLeft="6dp"
+                android:hint="类型（请在clinic，doctor，patient中选择并填写）"
+                android:singleLine="true"
+                android:maxLength="15"
+                android:background="#ffffff"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/shap"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+            <EditText
+                android:id="@+id/clinic_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingLeft="6dp"
+                android:hint="诊所名称"
+                android:singleLine="true"
+                android:maxLength="15"
+                android:background="#ffffff"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/shap"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+            <EditText
+                android:id="@+id/clinic_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingLeft="6dp"
+                android:hint="诊所邮箱"
+                android:singleLine="true"
+                android:maxLength="15"
+                android:background="#ffffff"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/shap"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+            <EditText
+                android:id="@+id/clinic_tel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingLeft="6dp"
+                android:hint="诊所电话"
+                android:singleLine="true"
+                android:maxLength="15"
+                android:background="#ffffff"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/shap"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+            <EditText
+                android:id="@+id/clinic_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingLeft="6dp"
+                android:hint="诊所类型（eg.牙科，皮肤科）"
+                android:singleLine="true"
+                android:maxLength="15"
+                android:background="#ffffff"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/shap"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+            <EditText
+                android:id="@+id/clinic_head"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingLeft="6dp"
+                android:hint="诊所负责人"
+                android:singleLine="true"
+                android:maxLength="15"
+                android:background="#ffffff"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@drawable/shap"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+        <EditText
+            android:id="@+id/head_tel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:paddingLeft="6dp"
+            android:hint="负责人电话"
+            android:singleLine="true"
+            android:maxLength="15"
+            android:background="#ffffff"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+        <LinearLayout
+            android:background="@drawable/shap"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+            <EditText
+                android:id="@+id/head_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingLeft="6dp"
+                android:hint="负责人邮箱"
+                android:singleLine="true"
+                android:maxLength="15"
+                android:background="#ffffff"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/shap"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+            <EditText
+                android:id="@+id/bank_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingLeft="6dp"
+                android:hint="银行名称"
+                android:singleLine="true"
+                android:maxLength="15"
+                android:background="#ffffff"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/shap"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+            <EditText
+                android:id="@+id/regis_num"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingLeft="6dp"
+                android:hint="银行注册号"
+                android:singleLine="true"
+                android:maxLength="15"
+                android:background="#ffffff"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/shap"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+            <EditText
+                android:id="@+id/bank_branch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingLeft="6dp"
+                android:hint="分行"
+                android:singleLine="true"
+                android:maxLength="15"
+                android:background="#ffffff"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/shap"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+            <EditText
+                android:id="@+id/bank_accout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingLeft="6dp"
+                android:hint="银行账号"
+                android:singleLine="true"
+                android:maxLength="15"
+                android:background="#ffffff"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/shap"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+            <EditText
+                android:id="@+id/accout_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingLeft="6dp"
+                android:hint="用户名"
+                android:singleLine="true"
+                android:maxLength="15"
+                android:background="#ffffff"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" >
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="40dp"
+            android:text="注册"
+            android:textSize="24sp"
+            android:background="@color/colorPrimary"
+            />
+    </RelativeLayout>
+
+</LinearLayout></ScrollView>
