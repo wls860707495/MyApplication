@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.myapplication.View.MainActivity"
     >
     <RelativeLayout
@@ -20,38 +19,20 @@
             android:textSize="20sp"
             android:textColor="@android:color/white"/>
     </RelativeLayout>
-    <LinearLayout
-        android:id="@+id/root_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
 
-        <LinearLayout
+        <FrameLayout
             android:id="@+id/fragment_container"
-            android:layout_width="200dip"
-            android:layout_height="match_parent"
-            android:orientation="vertical"></LinearLayout>
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-        <fragment
-            android:name="com.myapplication.View.Fragment1"
-            android:id="@+id/fragment1"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
+        </FrameLayout>
 
-        <fragment
-            android:name="com.myapplication.View.Fragment2"
-            android:id="@+id/fragment2"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
-    </LinearLayout>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:layout_marginEnd="0dp"
         android:layout_marginStart="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -60,4 +41,5 @@
         android:background="@color/blue"
         app:menu="@menu/navigation" />
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
+

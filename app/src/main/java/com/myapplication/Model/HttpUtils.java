@@ -1,16 +1,16 @@
 package com.myapplication.Model;
 import android.util.Log;
 
-import com.myapplication.UtilsHelper.SharePreferenceUtil;
-import com.myapplication.View.LoginActivity;
-import com.squareup.okhttp.MediaType;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
-import com.squareup.okhttp.Response;
+
 
 
 import java.io.IOException;
+
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 import static com.myapplication.UtilsHelper.SharePreferenceUtil.Getcontent;
 
@@ -43,7 +43,7 @@ public class HttpUtils {
     public static Response post_token(String url, String json, String token) throws IOException {
         RequestBody body = RequestBody.create(JSON, json);
         Request request = new Request.Builder()
-                .addHeader("token",token)
+                .addHeader("Authorization",token)
                 .url(url)
                 .post(body)
                 .build();
@@ -53,7 +53,7 @@ public class HttpUtils {
 
     public static Response get_token(String url, String token) throws IOException {
         Request request = new Request.Builder()
-                .addHeader("token",token)
+                .addHeader("Authorization",token)
                 .url(url)
                 .build();
         Response response = client.newCall(request).execute();

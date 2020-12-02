@@ -7,14 +7,7 @@ package com.myapplication.Model;//package com.example.vinzee.andriodfragmentexam
 
 import android.util.Log;
 
-import com.squareup.okhttp.Call;
 
-import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.MediaType;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
-import com.squareup.okhttp.Response;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -22,6 +15,8 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+
+import okhttp3.Response;
 
 public class Usermessage {
     /**
@@ -59,4 +54,5 @@ public class Usermessage {
         String back = response.body().string();
         return back;
     }
+
 }

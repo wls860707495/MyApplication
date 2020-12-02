@@ -39,5 +39,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation 'com.mcxiaoke.volley:library:1.0.19'
     implementation 'org.apache.httpcomponents:httpcore:4.4.1'
-    implementation 'com.squareup.okhttp:okhttp:2.7.5'
+    implementation 'com.squareup.okhttp3:okhttp:3.9.1'
+    implementation 'jp.wasabeef:richeditor-android:2.0.0'
+    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
 }
