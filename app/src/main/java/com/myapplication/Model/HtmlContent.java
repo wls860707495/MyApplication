@@ -34,6 +34,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class HtmlContent {
+    int m=0;
     private Dealstring dealstring = new Dealstring();
     public String htmlcontent(String html, List<String> urls, String token) throws Exception {
         //注册诊所
@@ -45,21 +46,24 @@ public class HtmlContent {
         int o = 0;
         List<String> urls2 = dealstring.dealhtml(urls);
 
-        Log.i("wangs", token);
         if(urls2 !=null){
             for (int i = 0; i < urls2.size(); i++) {
                 File f = new File(urls2.get(i));
                 if (f == null) break;
+                Log.i("wangsss", f.getAbsolutePath());
                 try {
                     BitmapFactory.Options options = new BitmapFactory.Options();
                     options.inPreferredConfig = Bitmap.Config.RGB_565;
                     Bitmap bm = BitmapFactory.decodeFile(f.getAbsolutePath(), options);
                     bm.compress(Bitmap.CompressFormat.JPEG, 90, new FileOutputStream(f));
+//                    saveBitmap(bm);
                     bm.recycle();
+
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
-                builder.addFormDataPart("img[]", f.getName(), RequestBody.create(MediaType.parse("png"), f));
+                Log.i("ss", f.getName());
+                builder.addFormDataPart("img[]", f.getName(), RequestBody.create(MediaType.parse("image/jpeg"), f));
             }
         }
         builder.addFormDataPart("html",html);
@@ -73,5 +77,25 @@ public class HtmlContent {
         String back = response.body().string();
         return back;
 
+    }
+
+    //test
+    public void saveBitmap(Bitmap bitmap) throws IOException {
+        Log.i("ss", "saveBitmap: ");
+        m++;
+        File file = new File(Environment.getExternalStorageDirectory() + "/image"+m+".jpg");
+        Log.i("ss", file+"");
+        FileOutputStream out;
+        try {
+            out = new FileOutputStream(file);
+            if (bitmap.compress(Bitmap.CompressFormat.PNG, 70, out)) {
+                out.flush();
+                out.close();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
