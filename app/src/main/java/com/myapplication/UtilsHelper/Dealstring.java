@@ -18,4 +18,11 @@ public class Dealstring {
         }
         return ret;
     }
+    public String html(String str){
+        int ch = 0, start, end;
+        start = str.indexOf("http://",ch);
+        end = str.indexOf("alt=",ch);
+        String tmp = str.substring(start, end-2);
+        return tmp;
+    }
 }

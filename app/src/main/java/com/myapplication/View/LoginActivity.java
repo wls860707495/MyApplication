@@ -79,7 +79,6 @@ public class LoginActivity extends AppCompatActivity {
                     Thread thread = new Thread(ft);
                     thread.start();
                     String json = ft.get();
-                    Log.i("wangls", json);
 
                     //接收String并解析为json
                     JSONObject Jobject = new JSONObject(json);

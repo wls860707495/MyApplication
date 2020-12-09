@@ -50,7 +50,6 @@ public class HtmlContent {
             for (int i = 0; i < urls2.size(); i++) {
                 File f = new File(urls2.get(i));
                 if (f == null) break;
-                Log.i("wangsss", f.getAbsolutePath());
                 try {
                     BitmapFactory.Options options = new BitmapFactory.Options();
                     options.inPreferredConfig = Bitmap.Config.RGB_565;
@@ -74,9 +73,19 @@ public class HtmlContent {
                 .post(requesBody)
                 .build();
         Response response = client.newCall(request).execute();
-        String back = response.body().string();
+        String back = response.body().toString();
         return back;
 
+    }
+    public String listpush(String very,String token) throws Exception {
+        //获取发布内容条目
+        Response response = null;
+        String path = "http://180.201.141.232:8081/Push/listcontent";
+        String jsonStr = "{\"very\":"+ very +"}";//json数据.
+        response = HttpUtils.post_token(path, jsonStr,token);
+        String back = response.body().string();
+        Log.i("push", back);
+        return back;
     }
 
     //test
